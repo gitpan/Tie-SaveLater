@@ -1,5 +1,5 @@
 #
-# $Id: DataDumper.pm,v 0.3 2006/03/22 22:10:28 dankogai Exp dankogai $
+# $Id: DataDumper.pm,v 0.3 2006/03/22 22:10:28 dankogai Exp $
 #
 package Tie::DataDumper;
 use strict;

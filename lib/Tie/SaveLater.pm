@@ -1,10 +1,10 @@
 #
-# $Id: SaveLater.pm,v 0.3 2006/03/22 22:10:28 dankogai Exp dankogai $
+# $Id: SaveLater.pm,v 0.4 2006/03/23 04:36:36 dankogai Exp dankogai $
 #
 package Tie::SaveLater;
 use strict;
 use warnings;
-our $VERSION = sprintf "%d.%02d", q$Revision: 0.3 $ =~ /(\d+)/g;
+our $VERSION = sprintf "%d.%02d", q$Revision: 0.4 $ =~ /(\d+)/g;
 use Carp;
 our $DEBUG = 0;
 my (%OBJ2FN, %FN2OBJ, %OPTIONS);
@@ -14,7 +14,7 @@ sub make_subclasses{
     for my $type (qw/SCALAR ARRAY HASH/){
 	my $class = $pkg; my $Type = ucfirst(lc $type);
 	eval qq{ package $class\:\:$type;
-		 require Tie\:\:$type;
+		 require Tie\:\:$Type;
 	     push our \@ISA, qw($class Tie\:\:Std$Type); };
 	$@ and croak $@;
     }
